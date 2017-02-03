@@ -65,3 +65,9 @@ graph TD;
 </pre>
 
 ![previm](https://raw.github.com/wiki/kannokanno/previm/images/previm-example-mermaid.png)
+
+### dark theme
+You can use dark theme by adding the following settings to .vimrc file.
+```vim
+let g:previm_custom_css_path = '<path to previm>/previm/preview/css/dark.css'
+```
