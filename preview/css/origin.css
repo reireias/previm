@@ -235,6 +235,12 @@ img {
   max-height: 800px;
   width: 350px;
 }
+
+#outline ul {
+    padding-left: 20px;
+}
+
 #outline li {
   margin: 3px 0;
+  list-style-type: none;
 }

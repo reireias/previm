@@ -90,13 +90,12 @@
 
     for (var tag of tags) {
       var li = _doc.createElement('li'),
-          a = _doc.createElement('a');
+          a = _doc.createElement('a'),
+          text;
+      text = tag.tag == 'h2' ? '' + tag.text : '\u00a0\u00a0\u00a0\u00a0' + tag.text;
       a.setAttribute('href', '#' + tag.id);
-      a.appendChild(_doc.createTextNode(tag.text));
+      a.appendChild(_doc.createTextNode(text));
       li.appendChild(a);
-      if (tag.tag == 'h3') {
-        li.setAttribute('style', 'list-style-type: circle;');
-      }
       ul.appendChild(li);
     }
     outline.appendChild(ul);
