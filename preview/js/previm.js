@@ -55,6 +55,53 @@
     }
   }
 
+  function createOutline() {
+    var outline = _doc.getElementById('outline'),
+        h2tags = _doc.getElementsByTagName('h2'),
+        h3tags = _doc.getElementsByTagName('h3'),
+        tags = [],
+        ul;
+    for (var i = 0; i < h2tags.length; i++) {
+      var h2 = h2tags[i];
+      tags.push({
+        tag: 'h2',
+        id: h2.id,
+        text: h2.innerText,
+        offsetTop: h2.offsetTop
+      });
+    }
+    for (var i = 0; i < h3tags.length; i++) {
+      var h3 = h3tags[i];
+      tags.push({
+        tag: 'h3',
+        id: h3.id,
+        text: h3.innerText,
+        offsetTop: h3.offsetTop
+      });
+    }
+    tags.sort(function(a, b) {
+      return a.offsetTop - b.offsetTop;
+    });
+
+    if (outline.firstChild) {
+      outline.removeChild(outline.firstChild);
+    }
+    ul = _doc.createElement('ul');
+
+    for (var tag of tags) {
+      var li = _doc.createElement('li'),
+          a = _doc.createElement('a');
+      a.setAttribute('href', '#' + tag.id);
+      a.appendChild(_doc.createTextNode(tag.text));
+      li.appendChild(a);
+      if (tag.tag == 'h3') {
+        li.setAttribute('style', 'list-style-type: circle;');
+      }
+      ul.appendChild(li);
+    }
+    outline.appendChild(ul);
+  }
+
   function loadPreview() {
     var needReload = false;
     // These functions are defined as the file generated dynamically.
@@ -84,6 +131,7 @@
       Array.prototype.forEach.call(_doc.querySelectorAll('pre code'), hljs.highlightBlock);
       autoScroll('body', beforePageYOffset);
       style_header();
+      createOutline();
     }
   }
 

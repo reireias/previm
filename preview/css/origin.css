@@ -225,3 +225,19 @@ img {
     page-break-inside: avoid;
   }
 }
+
+#outline {
+  font-size: 12px;
+  display: block;
+  border: 1px solid #ccc;
+  margin: 5px 0px 5px 0px;
+  position: fixed;
+  left: 1400px;
+  top: 10px;
+  overflow-y: auto;
+  max-height: 800px;
+  width: 350px;
+}
+#outline li {
+  margin: 3px 0;
+}
