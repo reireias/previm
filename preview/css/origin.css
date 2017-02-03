@@ -35,13 +35,11 @@ body > *:last-child {
 h1 {
   font-size: 28px;
   margin-bottom: 10px;
-  color: black;
 }
 
 h2 {
   font-size: 24px;
   margin: 20px 0 10px;
-  color: black;
   border-bottom: 1px solid #ccc;
 }
 
@@ -63,7 +61,6 @@ h5 {
 }
 
 h6 {
-  color: #777;
   font-size: 14px;
   font-weight: bold;
   margin: 20px 0 10px;
@@ -232,7 +229,7 @@ img {
   border: 1px solid #ccc;
   margin: 5px 0px 5px 0px;
   position: fixed;
-  left: 1400px;
+  left: 1500px;
   top: 10px;
   overflow-y: auto;
   max-height: 800px;
