@@ -83,10 +83,12 @@
       return a.offsetTop - b.offsetTop;
     });
 
-    if (outline.firstChild) {
-      outline.removeChild(outline.firstChild);
+    ul = _doc.getElementById('outline-menu');
+    if (ul) {
+      ul.parentNode.removeChild(ul);
     }
     ul = _doc.createElement('ul');
+    ul.id = 'outline-menu';
 
     for (var tag of tags) {
       var li = _doc.createElement('li'),
@@ -98,7 +100,11 @@
       li.appendChild(a);
       ul.appendChild(li);
     }
+
     outline.appendChild(ul);
+    if (_win.innerWidth < 1800) {
+      outline.setAttribute('style', 'display: none;');
+    }
   }
 
   function loadPreview() {

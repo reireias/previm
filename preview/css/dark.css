@@ -54,3 +54,8 @@ table, table tr th, table tr td {
 #outline {
     border: 1px solid #808080;
 }
+
+.mermaid svg {
+    background: #fff;
+    border: 1px solid #960050;
+}
