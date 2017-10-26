@@ -70,6 +70,7 @@
         ul;
     for (var i = 0; i < h2tags.length; i++) {
       var h2 = h2tags[i];
+      h2.id = 'h2-' + i;
       tags.push({
         tag: 'h2',
         id: h2.id,
@@ -79,6 +80,7 @@
     }
     for (var i = 0; i < h3tags.length; i++) {
       var h3 = h3tags[i];
+      h3.id = 'h3-' + i;
       tags.push({
         tag: 'h3',
         id: h3.id,
